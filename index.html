@@ -1,0 +1,254 @@
+<!doctype html>
+<!--[if lte IE 9]>
+<html lang="en" class="oldie">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+
+
+<style>
+
+ /* The  OLD navigation bar 
+ .navbar {
+  overflow: hidden;
+  background-color: #333;
+  /* position: absolute; /* Set the navbar to fixed position */
+ /* top: 0; /* Position the navbar at the top of the page */
+ /* width: auto; 
+  left: 0;
+  width: 100%;
+  padding: 30px;
+}
+*/
+
+#nav-bar{
+  position: fixed;
+  right: 0;
+  top: 10%;
+  width: 20%;
+  margin-top: -2.5em;
+  background-color: #333;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  /* float: left; */
+  display: block;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+  margin-bottom: 30px; /* Add a bottom margin to avoid content overlay */
+} 
+
+img {
+    float: right;
+}
+
+/* CSS Below comes from https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/ */
+
+/*
+
+    header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  background: orange;
+  text-align: center;
+}
+
+*/
+
+/*
+  ULTIMATELY scroll-padding needs to go on the <html> element, not <body>. 
+  IF THIS DEMO IS BROKEN, try that
+*/
+html {
+  --top-spacing: 10px;
+    scroll-padding-top: var(--top-spacing);
+}
+
+body {
+  // ULTIMATELY this needs to go on <html>, not <body>. 
+
+  margin: var(--top-spacing) auto;
+  max-width: auto;
+  padding: 0 20px;
+  /* font: 18px/1.4 system-ui; */
+}
+
+</style>
+
+</head>
+
+
+
+<body >
+
+
+
+    <header id="header"  class="main">
+
+
+  
+      <nav id="nav-bar" class="navbar">
+
+        <H1 id="header">Acme Widgets</H1>
+
+        <div class="logo">
+            <img
+              id="header-img"
+              src="PB.Psychedelic.jpg"
+              alt="Psychedelic!!"
+              width="20%"
+              height="auto"
+              
+            />
+          </div>
+
+        <ul>
+          <li align: left;><a class="nav-link" href="#features">Features</a></li>
+          <li align: left;><a class="nav-link" href="#how-it-works">How It Works</a></li>
+          <li align: left;><a class="nav-link" href="#pricing">Pricing</a></li>
+        </ul>
+
+
+
+      </nav>
+
+    </header>
+  
+    <div id="page-wrapper" class="main">
+
+        <div class="container"></div>
+  
+    <section id="hero">
+      <h2>Digitally-Handcrafted, home-factory-made masterpieces</h2>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <input
+          name="email"
+          id="email"
+          type="email" 
+          placeholder="Enter your email address"
+          required
+        /> <!-- type="email" validates email as per User Story# 10 -->
+        <input id="submit" type="submit" value="Get Started" class="btn" />
+      </form>
+    </section>
+  
+    <div class="container">
+      <section id="features">
+        <div class="grid">
+          <div class="icon"><i class="fa fa-3x fa-fire"></i></div>
+          <div class="desc">
+            <h2>Features</h2>
+            <p>
+              Our raw widget materials are locally-sourced for your widgeting pleasure.
+            </p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="icon"><i class="fa fa-3x fa-truck"></i></div>
+          <div class="desc">
+            <h2>Fast Shipping</h2>
+            <p>
+              Pre-made to order and shipped imediately prior to manufacturing.
+            </p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="icon">
+            <i class="fa fa-3x fa-battery-full" aria-hidden="true"></i>
+          </div>
+          <div class="desc">
+            <h2>Factory Air-conditioned Air</h2>
+            <p>
+              From our fully factory-equipped, air-conditioned factory.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="how-it-works">
+          <h2>How It Works</h2>
+        <video
+          id="video"
+          height="315"
+          src="Roundand1939_512kb.mp4"
+          poster="VideoPoster.png"
+          preload="metadata"
+          frameborder="0"
+          allowfullscreen
+          controls
+          Your browser does not support the video tag
+        ></video>
+      </section>
+      <section id="pricing">
+        <div class="product" id="tenor">
+          <div class="level">Widget One</div>
+          <h2>$600</h2>
+          <ol>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+          <button class="btn">Select</button>
+        </div>
+        <div class="product" id="bass">
+          <div class="level">Bass Trombone</div>
+          <h2>$900</h2>
+          <ol>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+          <button class="btn">Select</button>
+        </div>
+        <div class="product" id="valve">
+          <div class="level">Valve Trombone</div>
+          <h2>$1200</h2>
+          <ol>
+            <li>Plays similar to a Trumpet</li>
+            <li>Great for Jazz Bands</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+          <button class="btn">Select</button>
+        </div>
+      </section>
+      <footer>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <span>Copyright 2026, Acme Widgets</span>
+      </footer>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+
+</html>
