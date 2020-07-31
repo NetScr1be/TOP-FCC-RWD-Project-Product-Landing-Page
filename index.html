@@ -14,26 +14,31 @@
 
 <style>
 
- /* The  OLD navigation bar 
- .navbar {
-  overflow: hidden;
-  background-color: #333;
-  /* position: absolute; /* Set the navbar to fixed position */
- /* top: 0; /* Position the navbar at the top of the page */
- /* width: auto; 
-  left: 0;
-  width: 100%;
-  padding: 30px;
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
 }
-*/
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+}
 
 #nav-bar{
+  --navbar-width: 20%;
   position: fixed;
   right: 0;
   top: 10%;
-  width: 20%;
+  width: var(--navbar-width);
   margin-top: -2.5em;
   background-color: #333;
+  display: box;
+  padding: 5px;
 }
 
 /* Links inside the navbar */
@@ -53,49 +58,46 @@
 }
 
 /* Main content */
-.main {
+#main {
   margin-top: 30px; /* Add a top margin to avoid content overlay */
+  margin-right: 30px; /* Add a right margin to avoid content overlay */
   margin-bottom: 30px; /* Add a bottom margin to avoid content overlay */
 } 
 
 img {
-    float: right;
+    align-content: flex-start;
 }
 
-/* CSS Below comes from https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/ */
 
-/*
-
-    header.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px;
-  background: orange;
-  text-align: center;
-}
-
-*/
-
-/*
-  ULTIMATELY scroll-padding needs to go on the <html> element, not <body>. 
-  IF THIS DEMO IS BROKEN, try that
-*/
 html {
   --top-spacing: 10px;
     scroll-padding-top: var(--top-spacing);
 }
 
 body {
-  // ULTIMATELY this needs to go on <html>, not <body>. 
 
   margin: var(--top-spacing) auto;
-  max-width: auto;
+  max-width: 70%;
   padding: 0 20px;
   /* font: 18px/1.4 system-ui; */
 }
 
+footer {
+   padding: 3px;
+   margin-top: 15px;
+   border: 1px solid;
+}
+
+/* User Story #15: My product landing page should utilize CSS flexbox at least once. */
+
+#container{
+    display: flex;
+}
+
+h1 {
+    display: inline;
+    margin: 3px;
+}
 </style>
 
 </head>
@@ -108,134 +110,120 @@ body {
 
     <header id="header"  class="main">
 
+        <nav id="nav-bar" class="navbar">
 
-  
-      <nav id="nav-bar" class="navbar">
+            <div>
 
-        <H1 id="header">Acme Widgets</H1>
+            <H1 id="header">Acme Widgets</H1>
 
-        <div class="logo">
-            <img
-              id="header-img"
-              src="PB.Psychedelic.jpg"
-              alt="Psychedelic!!"
-              width="20%"
-              height="auto"
-              
-            />
-          </div>
+                <img
+                id="header-img"
+                src="PB.Psychedelic.jpg"
+                alt="Psychedelic!!"
+                width="20%"
+                height="auto"
+                />
+            </div>
 
-        <ul>
-          <li align: left;><a class="nav-link" href="#features">Features</a></li>
-          <li align: left;><a class="nav-link" href="#how-it-works">How It Works</a></li>
-          <li align: left;><a class="nav-link" href="#pricing">Pricing</a></li>
-        </ul>
+            <div>
+                <ul>
+                    <li align: left;><a class="nav-link" href="#features">Features</a></li>
+                    <li align: left;><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                    <li align: left;><a class="nav-link" href="#pricing">Pricing</a></li>
+                </ul> 
+            </div>
 
-
-
-      </nav>
+         </nav>
 
     </header>
   
     <div id="page-wrapper" class="main">
 
-        <div class="container"></div>
-  
-    <section id="hero">
-      <h2>Digitally-Handcrafted, home-factory-made masterpieces</h2>
-      <form id="form" action="https://www.freecodecamp.com/email-submit">
-        <input
-          name="email"
-          id="email"
-          type="email" 
-          placeholder="Enter your email address"
-          required
-        /> <!-- type="email" validates email as per User Story# 10 -->
-        <input id="submit" type="submit" value="Get Started" class="btn" />
-      </form>
-    </section>
-  
-    <div class="container">
-      <section id="features">
-        <div class="grid">
-          <div class="icon"><i class="fa fa-3x fa-fire"></i></div>
-          <div class="desc">
-            <h2>Features</h2>
-            <p>
-              Our raw widget materials are locally-sourced for your widgeting pleasure.
-            </p>
-          </div>
+        <div class="container">
+            <h2>Digitally-Handcrafted, home-factory-made masterpieces</h2>    
+            <section id="hero">
+                <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <input
+                    name="email"
+                    id="email"
+                    type="email" 
+                    placeholder="Enter your email address"
+                    required
+                    /> <!-- type="email" validates email as per User Story# 10 -->
+                    <input id="submit" type="submit" value="Get Started" class="btn" />
+                </form>
+            </section>
         </div>
-        <div class="grid">
-          <div class="icon"><i class="fa fa-3x fa-truck"></i></div>
-          <div class="desc">
-            <h2>Fast Shipping</h2>
-            <p>
-              Pre-made to order and shipped imediately prior to manufacturing.
-            </p>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="icon">
-            <i class="fa fa-3x fa-battery-full" aria-hidden="true"></i>
-          </div>
-          <div class="desc">
-            <h2>Factory Air-conditioned Air</h2>
-            <p>
-              From our fully factory-equipped, air-conditioned factory.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="how-it-works">
-          <h2>How It Works</h2>
-        <video
-          id="video"
-          height="315"
-          src="Roundand1939_512kb.mp4"
-          poster="VideoPoster.png"
-          preload="metadata"
-          frameborder="0"
-          allowfullscreen
-          controls
-          Your browser does not support the video tag
-        ></video>
-      </section>
+
+        <div class="container">
+            <section id="features">
+
+                <div class="desc">
+                    <h2>Materials</h2>
+                    <p>
+                    Our raw widget materials are locally-sourced for your widgeting pleasure.
+                    </p>
+                </div>
+
+                <div class="desc">
+                    <h2>Fast Shipping</h2>
+                    <p>
+                    Pre-made to order and shipped imediately prior to manufacturing.
+                    </p>
+                </div>
+
+                <div class="desc">
+                    <h2>Factory Air-conditioned Air</h2>
+                    <p>
+                    From our fully factory-equipped, air-conditioned factory.
+                    </p>
+                </div>
+
+            </section>
+            
+            <section id="how-it-works">
+                <h2>How It Works</h2>
+                <video
+                id="video"
+                height="315"
+                src="Roundand1939_512kb.mp4"
+                poster="VideoPoster.png"
+                preload="metadata"
+                frameborder="0"
+                allowfullscreen
+                controls
+                Your browser does not support the video tag
+                ></video>
+            </section>
+
       <section id="pricing">
-        <div class="product" id="tenor">
+        <div class="product" id="1">
           <div class="level">Widget One</div>
-          <h2>$600</h2>
+          <h2>$400</h2>
           <ol>
-            <li>Lorem ipsum.</li>
-            <li>Lorem ipsum.</li>
-            <li>Lorem ipsum dolor.</li>
-            <li>Lorem ipsum.</li>
+            <li>Quantity 1 Widget</li>
           </ol>
           <button class="btn">Select</button>
         </div>
-        <div class="product" id="bass">
-          <div class="level">Bass Trombone</div>
-          <h2>$900</h2>
+        <div class="product" id="2">
+          <div class="level">Widget 2</div>
+          <h2>$800</h2>
           <ol>
-            <li>Lorem ipsum.</li>
-            <li>Lorem ipsum.</li>
-            <li>Lorem ipsum dolor.</li>
-            <li>Lorem ipsum.</li>
+            <li>Quantity 2 Widgets</li>
           </ol>
           <button class="btn">Select</button>
         </div>
-        <div class="product" id="valve">
-          <div class="level">Valve Trombone</div>
+
+        <div class="product" id="3">
+          <div class="level">Widget 3</div>
           <h2>$1200</h2>
           <ol>
-            <li>Plays similar to a Trumpet</li>
-            <li>Great for Jazz Bands</li>
-            <li>Lorem ipsum dolor.</li>
-            <li>Lorem ipsum.</li>
+            <li>Quantity 3 Widgets</li>
           </ol>
           <button class="btn">Select</button>
         </div>
       </section>
+
       <footer>
         <ul>
           <li><a href="#">Privacy</a></li>
@@ -245,7 +233,7 @@ body {
         <span>Copyright 2026, Acme Widgets</span>
       </footer>
     </div>
-  </div>
+
   
 </div>
 
