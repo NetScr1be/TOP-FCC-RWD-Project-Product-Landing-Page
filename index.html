@@ -5,237 +5,193 @@
 <!--[if gt IE 9]><!-->
 <html lang="en">
 <!--<![endif]-->
+
 <head>
-<meta charset="utf-8">
 
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-
+  <meta charset="utf-8">
 
 
-<style>
-
-
-/* On screens that are 992px or less, set the background color to blue */
-@media screen and (max-width: 992px) {
-  body {
-    background-color: blue;
-  }
-}
-
-/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
-  body {
-    background-color: olive;
-  }
-}
-
-#nav-bar{
-  --navbar-width: 20%;
-  position: fixed;
-  right: 0;
-  top: 10%;
-  width: var(--navbar-width);
-  margin-top: -2.5em;
-  background-color: #333;
-  display: box;
-  padding: 5px;
-}
-
-/* Links inside the navbar */
-.navbar a {
-  /* float: left; */
-  display: block;
-  color: #f2f2f2;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change background on mouse-over */
-.navbar a:hover {
-  background: #ddd;
-  color: black;
-}
-
-/* Main content */
-#main {
-  margin-top: 30px; /* Add a top margin to avoid content overlay */
-  margin-right: 30px; /* Add a right margin to avoid content overlay */
-  margin-bottom: 30px; /* Add a bottom margin to avoid content overlay */
-} 
-
-img {
-    align-content: flex-start;
-}
-
-
-html {
-  --top-spacing: 10px;
-    scroll-padding-top: var(--top-spacing);
-}
-
-body {
-
-  margin: var(--top-spacing) auto;
-  max-width: 70%;
-  padding: 0 20px;
-  /* font: 18px/1.4 system-ui; */
-}
-
-footer {
-   padding: 3px;
-   margin-top: 15px;
-   border: 1px solid;
-}
-
-/* User Story #15: My product landing page should utilize CSS flexbox at least once. */
-
-#container{
-    display: flex;
-}
-
-h1 {
-    display: inline;
-    margin: 3px;
-}
-</style>
+  <link rel="stylesheet" href="./local.style.css">
 
 </head>
 
+<body>
+
+  <!-- For unspecified reasons, the code to be tested has to be wrapped in the comment
+     below and contain false/duplicate <head> and <body> elements -->
+
+  <!-- There has to be a matching partial comment below with a  </body> and </html> tag below that  -->
+
+  <!-- partial:index.partial.html -->
+
+  <head>
+
+    <script src="bundle.js"></script>
+
+    <style>
+
+      /* On screens that are 992px or less, set the background color to blue */
+      @media screen and (max-width: 992px) {
+          body {
+            background-color: blue;
+          }
+        }
+        
+        /* On screens that are 600px or less, set the background color to olive */
+      @media screen and (max-width: 600px) {
+          body {
+            background-color: olive;
+          }
+        }
+
+        /* User Story #15: My product landing page should utilize CSS flexbox at least once. */
+  
+        #container{
+            display: flex;
+        }
+        
+        h1 {
+            display: flex;
+            margin: 3px;
+        }
+        
+  
+    </style>
+
+  </head>
 
 
-<body >
+
+  <body>
+
+    <header id="header" class="main">
 
 
+      <nav id="nav-bar" class="navbar">
 
-    <header id="header"  class="main">
+        <div>
 
-        <nav id="nav-bar" class="navbar">
+          <H1>Acme Widgets</H1>
 
-            <div>
+          <img id="header-img" src="https://github.com/NetScr1be/TOP-FCC-RWD-Project-Product-Landing-Page/blob/master/PB.Psychedelic.jpg" alt="Psychedelic!!" width="20%" height="auto">
 
-            <H1 id="header">Acme Widgets</H1>
+        </div>
 
-                <img
-                id="header-img"
-                src="PB.Psychedelic.jpg"
-                alt="Psychedelic!!"
-                width="20%"
-                height="auto"
-                />
-            </div>
+        <div>
+          <ul>
+            <li align: left;><a class="nav-link" href="#features">Features</a></li>
+            <li align: left;><a class="nav-link" href="#how-it-works">How It Works</a></li>
+            <li align: left;><a class="nav-link" href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
 
-            <div>
-                <ul>
-                    <li align: left;><a class="nav-link" href="#features">Features</a></li>
-                    <li align: left;><a class="nav-link" href="#how-it-works">How It Works</a></li>
-                    <li align: left;><a class="nav-link" href="#pricing">Pricing</a></li>
-                </ul> 
-            </div>
-
-         </nav>
+      </nav>
 
     </header>
-  
+
     <div id="page-wrapper" class="main">
 
-        <div class="container">
-            <h2>Digitally-Handcrafted, home-factory-made masterpieces</h2>    
-            <section id="hero">
-                <form id="form" action="https://www.freecodecamp.com/email-submit">
-                    <input
-                    name="email"
-                    id="email"
-                    type="email" 
-                    placeholder="Enter your email address"
-                    required
-                    /> <!-- type="email" validates email as per User Story# 10 -->
-                    <input id="submit" type="submit" value="Get Started" class="btn" />
-                </form>
-            </section>
-        </div>
+      <div class="container">
+        <h2>Digitally-Handcrafted, home-factory-made masterpieces</h2>
+        <section id="hero">
+          <form id="form" action="https://www.freecodecamp.com/email-submit">
+            <input name="email" id="email" type="email" placeholder="Enter your email address" required />
+            <!-- type="email" validates email as per User Story# 10 -->
+            <input id="submit" type="submit" value="Get Started" class="btn" />
+          </form>
+        </section>
+      </div>
 
-        <div class="container">
-            <section id="features">
+      <div class="container">
 
-                <div class="desc">
-                    <h2>Materials</h2>
-                    <p>
-                    Our raw widget materials are locally-sourced for your widgeting pleasure.
-                    </p>
+        <section id="features">
+
+          <div class="desc">
+            <h2>Materials</h2>
+            <p>
+              Our raw widget materials are locally-sourced for your widgeting pleasure.
+            </p>
+          </div>
+
+          <div class="desc">
+            <h2>Fast Shipping</h2>
+            <p>
+              Pre-made to order and shipped imediately prior to manufacturing.
+            </p>
+          </div>
+
+          <div class="desc">
+            <h2>Factory Air-conditioned Air</h2>
+            <p>
+              From our fully factory-equipped, air-conditioned factory.
+            </p>
+          </div>
+
+        </section>
+
+        <section id="how-it-works">
+          <h2>How It Works</h2>
+          <video id="video" height="315" src="Roundand1939_512kb.mp4" poster="VideoPoster.png" preload="metadata"
+            frameborder="0" allowfullscreen controls Your browser does not support the video tag></video>
+        </section>
+
+        <section id="pricing">
+
+          <div class="product" id="1">
+
+              <div class="level">
+                  Widget One
+                <h2>$400</h2>
+                <ol>
+                  <li>Quantity 1 Widget</li>
+                </ol>
+                <button class="btn">Select</button>
+              </div>
+
+              <div class="product" id="2">
+                <div class="level">
+                  Widget 2
+                  <h2>$800</h2>
+                  <ol>
+                    <li>Quantity 2 Widgets</li>
+                  </ol>
+                  <button class="btn">Select</button>
+                </div>
+              </div>
+
+              <div class="product" id="3">
+                
+                <div class="level">
+                  Widget 3
+                    <h2>$1200</h2>
+                    <ol>
+                      <li>Quantity 3 Widgets</li>
+                    </ol>
+                    <button class="btn">Select</button>
                 </div>
 
-                <div class="desc">
-                    <h2>Fast Shipping</h2>
-                    <p>
-                    Pre-made to order and shipped imediately prior to manufacturing.
-                    </p>
-                </div>
+          </div>
 
-                <div class="desc">
-                    <h2>Factory Air-conditioned Air</h2>
-                    <p>
-                    From our fully factory-equipped, air-conditioned factory.
-                    </p>
-                </div>
+        </section>
 
-            </section>
-            
-            <section id="how-it-works">
-                <h2>How It Works</h2>
-                <video
-                id="video"
-                height="315"
-                src="Roundand1939_512kb.mp4"
-                poster="VideoPoster.png"
-                preload="metadata"
-                frameborder="0"
-                allowfullscreen
-                controls
-                Your browser does not support the video tag
-                ></video>
-            </section>
+        <footer>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <span>Copyright 2026, Acme Widgets</span>
+        </footer>
 
-      <section id="pricing">
-        <div class="product" id="1">
-          <div class="level">Widget One</div>
-          <h2>$400</h2>
-          <ol>
-            <li>Quantity 1 Widget</li>
-          </ol>
-          <button class="btn">Select</button>
-        </div>
-        <div class="product" id="2">
-          <div class="level">Widget 2</div>
-          <h2>$800</h2>
-          <ol>
-            <li>Quantity 2 Widgets</li>
-          </ol>
-          <button class="btn">Select</button>
-        </div>
+      </div>
 
-        <div class="product" id="3">
-          <div class="level">Widget 3</div>
-          <h2>$1200</h2>
-          <ol>
-            <li>Quantity 3 Widgets</li>
-          </ol>
-          <button class="btn">Select</button>
-        </div>
-      </section>
 
-      <footer>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <span>Copyright 2026, Acme Widgets</span>
-      </footer>
     </div>
 
-  
-</div>
+  </body>
+
+  <!-- partial -->
+
 
 </body>
 

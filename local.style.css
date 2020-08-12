@@ -1,0 +1,211 @@
+
+    .header {
+        text-align: center;
+        border: 3px;
+        border-radius: 30px
+        grid-area: 1 / 1 / span 1 / span 2;
+    }
+
+    #main-doc {
+
+        display: grid;
+        grid-template-columns: 15% 42% 42%;
+        grid-template-areas:
+            'header header WindowParameters'
+            'ToC left right'
+            'ToC left right'
+            'ToC left right'
+            'footer footer footer';
+
+        gap: 3px;
+        background-color: #2125f3;
+        padding: 3px;
+        border-radius: 30px;
+    }
+    
+
+    .WindowParameters {
+        grid-area: 1 / 3 / span 1 / span 1;
+    }
+
+    .ToC {
+        grid-area: 2 / 1 / span 3 / span 1;
+    }
+
+    .column1 {
+        grid-area: 2 / 2 / span 3 / span 1;
+    }
+
+    .column2 {
+        grid-area: 2 / 3 / span 3 / span 1;
+    }
+
+    .footer, #footer {
+        grid-area: 5 / 1 / span 1 / span 3;
+        text-align: center;
+    }
+
+    #main-doc>div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: left;
+        padding: 20px 0;
+        font-size: 15px;
+        border-radius: 30px;
+    }
+
+    .ToC {
+
+        background-color: grey;
+        text-align: left;
+        padding: 5px;
+        font-size: 12px;
+
+    }
+
+    .Toc>ol {
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    section {
+        /* border: 3px rgb(81, 38, 124); */
+        margin: 2px 15px 0px 15px;
+        padding: 2px;
+    }
+
+    div {
+        margin-top: 3px;
+    }
+
+    code {
+        font-family: Consolas, "courier new";
+        color: rgb(65, 18, 66);
+        background-color: #f1f1f1;
+        padding: 2px;
+        font-size: 105%;
+    }
+
+    /* Highlight navigation target */
+
+    :target {
+        background: #ccc;
+        border: solid 1px #aaa;
+    }
+
+    /* Style flex containers showing Window Size */
+
+    .flex-container {
+            flex-direction: column;
+            flex-basis: content;
+        }
+         
+    .flex-container>div {
+        border: 3px;
+        border-radius: 30px;
+        background-color: #f1f1f1;
+        width: auto;
+        margin: auto;
+        line-height: auto;
+        font-size: auto;
+        text-align: center;
+    }
+
+    .WindowParameters>div {
+        text-align: center;
+        border: 3px;
+        border-radius: 30px;
+    }
+
+    .WindowParameters {
+        text-align: center;
+
+    }
+
+    #label {
+        text-align: center;
+    }
+
+    #value {
+        text-align: center;
+    }
+
+
+
+    /* PITA Styling to get ordered list wih correctly  numbered subsection */
+
+    ol {
+        counter-reset: item
+    }
+
+    li {
+        display: block
+        padding: 25px;
+    }
+
+    /* li:before {
+        content: counters(item, ".") " ";
+        counter-increment: item
+    } */
+
+    /*  style below moved from index.html */
+
+
+  #nav-bar{
+    --navbar-width: 20%;
+    position: fixed;
+    right: 0;
+    top: 5%;
+    width: var(--navbar-width);
+    margin-top: -2.5em;
+    background-color: #333;
+    display: box;
+    padding: 5px;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    /* float: left; */
+    display: block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change background on mouse-over */
+  .navbar a:hover {
+    background: #ddd;
+    color: black;
+  }
+  
+  /* Main content */
+  #main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+    margin-right: 30px; /* Add a right margin to avoid content overlay */
+    margin-bottom: 30px; /* Add a bottom margin to avoid content overlay */
+  } 
+  
+  /* img {
+      align-content: flex-start;
+  }
+   */
+  
+  html {
+    --top-spacing: 10px;
+      scroll-padding-top: var(--top-spacing);
+  }
+  
+  body {
+  
+    margin: var(--top-spacing) auto;
+    max-width: 70%;
+    padding: 0 20px;
+    /* font: 18px/1.4 system-ui; */
+  }
+  
+  footer {
+     padding: 3px;
+     margin-top: 15px;
+     border: 1px solid;
+  }
+  
